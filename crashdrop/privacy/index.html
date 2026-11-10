@@ -36,7 +36,7 @@
 <header>
   <img src="../icon.png" alt="Crash Drop icon">
   <h1>Crash Drop &ndash; Privacy Policy</h1>
-  <p>by Qissora &middot; Last updated: 9 November 2026</p>
+  <p>by Qissora &middot; Last updated: 10 November 2026</p>
 </header>
 <main>
 
@@ -46,6 +46,7 @@
     <li>Crash Drop has <strong>no accounts</strong>, no login and no sign-up. We do not ask for your name, email, phone number or location.</li>
     <li>Your game progress (levels, stars, coins, settings) is stored <strong>only on your device</strong>.</li>
     <li>The free version shows <strong>ads from Google AdMob</strong>. AdMob may use your device's advertising ID and similar data to show and measure ads. In the EEA, UK and some other regions you are asked for your choice first.</li>
+    <li>We use <strong>Google Firebase (Analytics and Crashlytics)</strong> to count how the game is played (for example which levels are too hard) and to find crashes. It uses a random app identifier, not your name or email. Where the law requires it we ask first, and you can switch it off any time in Settings.</li>
     <li>Purchases (coins, Remove Ads) are handled by <strong>Google Play</strong>. We never see or store your card details.</li>
     <li>We <strong>do not sell</strong> your personal data.</li>
     <li>Crash Drop is <strong>not directed to children under 13</strong>.</li>
@@ -58,15 +59,16 @@
     <a href="#who">1. Who we are</a>
     <a href="#device">2. Data stored on your device</a>
     <a href="#ads">3. Advertising (Google AdMob)</a>
-    <a href="#purchases">4. Purchases (Google Play)</a>
-    <a href="#permissions">5. Permissions the app uses</a>
-    <a href="#nothing">6. What we do not collect</a>
-    <a href="#children">7. Children</a>
-    <a href="#retention">8. Keeping and deleting data</a>
-    <a href="#rights">9. Your rights and choices</a>
-    <a href="#security">10. Security and transfers</a>
-    <a href="#changes">11. Changes to this policy</a>
-    <a href="#contact">12. Contact</a>
+    <a href="#analytics">4. Analytics and crash reports (Google Firebase)</a>
+    <a href="#purchases">5. Purchases (Google Play)</a>
+    <a href="#permissions">6. Permissions the app uses</a>
+    <a href="#nothing">7. What we do not collect</a>
+    <a href="#children">8. Children</a>
+    <a href="#retention">9. Keeping and deleting data</a>
+    <a href="#rights">10. Your rights and choices</a>
+    <a href="#security">11. Security and transfers</a>
+    <a href="#changes">12. Changes to this policy</a>
+    <a href="#contact">13. Contact</a>
   </nav>
 </section>
 
@@ -86,7 +88,7 @@
     <li>simple counters such as when the last interstitial ad was shown;</li>
     <li>the fact that you bought &ldquo;Remove Ads&rdquo; or a coin pack, and an identifier of each completed Google Play purchase so that it is never credited twice.</li>
   </ul>
-  <p>This information stays on your device. We do not run a game server, and we do not receive a copy of it. It cannot be used to identify you.</p>
+  <p>This saved game data stays on your device. We do not run a game server and we do not receive a copy of your save file. A few summary numbers from it (for example the highest level you have reached, your stars and your coin balance) are sent as analytics events, as described in section 4. None of it can be used to identify you.</p>
 </section>
 
 <section class="card" id="ads">
@@ -106,67 +108,88 @@
   <p>We do not receive this information in a form that identifies you, and we do not combine it with anything else. Google processes it under its own policies: <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener">How Google uses information from sites or apps that use its services</a>.</p>
   <h3>Your choices about ads</h3>
   <ul>
-    <li><strong>Consent:</strong> where the law requires it (for example in the European Economic Area and the United Kingdom) the game asks for your choice through Google's consent form before ads are loaded. To see the form again, clear the app's data (see section 8).</li>
+    <li><strong>Consent:</strong> where the law requires it (for example in the European Economic Area and the United Kingdom) the game asks for your choice through Google's consent form before ads are loaded. To see the form again, clear the app's data (see section 9).</li>
     <li><strong>Advertising ID:</strong> on Android you can reset it or opt out of ads personalisation in <em>Settings &rarr; Privacy (or Google) &rarr; Ads</em>, and you can delete the advertising ID there.</li>
     <li><strong>Remove Ads:</strong> buying it stops interstitial ads. Optional rewarded videos remain available if you choose to watch them.</li>
   </ul>
 </section>
 
+<section class="card" id="analytics">
+  <h2>4. Analytics and crash reports (Google Firebase)</h2>
+  <p>To understand how the game is played and to fix problems, the game uses two services from <strong>Google Firebase</strong>, provided by Google LLC: <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>.</p>
+  <table>
+    <tr><th>Information</th><th>Purpose</th></tr>
+    <tr><td>A randomly generated <em>app instance ID</em> and installation ID (they are not your name, email or Advertising ID, and they change if you reinstall the game)</td><td>Counting players and sessions, and recognising a returning player without knowing who they are</td></tr>
+    <tr><td>Device and app information: phone model, Android version, language, app version, and a country or region derived from your IP address</td><td>Understanding which devices the game must run well on, and where it is played</td></tr>
+    <tr><td>Gameplay events: for example a level was started, won or failed (with stars, number of shots and time taken), a rewarded or interstitial ad was shown, a shop item or coin pack was bought (the product only, never payment details), which screens were opened, the average frame rate while playing, and a few progress numbers such as your highest level, total stars and coin balance</td><td>Finding levels that are too hard or too easy, improving balance and performance, and seeing whether ads and the shop work as intended</td></tr>
+    <tr><td>Crash reports: the technical error log, the state of the device (model, Android version, memory) and a few game details such as the level that was being played</td><td>Finding and fixing crashes</td></tr>
+  </table>
+  <p>We use Firebase for measuring how the game is played and for crash reports only. Its advertising features (such as ad personalisation signals) are switched off in the game. We do not use this information to identify you, and we do not combine it with your name, email, contacts or any other personal information, because we do not have any. Google processes it under its own terms: <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>.</p>
+  <h3>Your choices</h3>
+  <ul>
+    <li><strong>Consent:</strong> where the law requires it (for example in the EEA and the UK) nothing is collected until you agree in the consent form shown when you first open the game. If you do not agree, no analytics or crash data is sent.</li>
+    <li><strong>Switch it off any time:</strong> turn off <em>Share anonymous usage data</em> in the game's Settings. From then on no analytics or crash data is sent.</li>
+    <li>Advertising choices are separate (see section 3).</li>
+  </ul>
+</section>
+
 <section class="card" id="purchases">
-  <h2>4. Purchases (Google Play)</h2>
+  <h2>5. Purchases (Google Play)</h2>
   <p>In-app purchases (coin packs and &ldquo;Remove Ads&rdquo;) are processed entirely by <strong>Google Play</strong> using the Google Play Billing Library. Google handles your payment details under the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and Google Play's terms. We never see or store your card number or other payment credentials.</p>
   <p>The game receives only a purchase confirmation (the product bought and a purchase token) so that it can give you the item. You can restore a purchase from the Settings screen. Refunds are handled by Google Play according to its refund policy.</p>
 </section>
 
 <section class="card" id="permissions">
-  <h2>5. Permissions the app uses</h2>
+  <h2>6. Permissions the app uses</h2>
   <ul>
-    <li><strong>Internet and network state</strong> &ndash; to load ads and talk to Google Play.</li>
+    <li><strong>Internet and network state</strong> &ndash; to load ads, talk to Google Play and send analytics and crash reports.</li>
     <li><strong>Vibration</strong> &ndash; for optional haptic feedback (you can switch it off in Settings).</li>
     <li><strong>Google Play Billing</strong> &ndash; to make in-app purchases.</li>
-    <li><strong>Advertising ID</strong> &ndash; used by the ads SDK as described in section 3.</li>
+    <li><strong>Advertising ID and ad-services permissions</strong> &ndash; used by the ads SDK as described in section 3. Firebase is set not to use the Advertising ID for advertising.</li>
+    <li>The Google software libraries built into the game add a few more permissions automatically. They are used only by those libraries, for the purposes in sections 3 to 5: <strong>keeping the device awake and running short background work</strong> so that an ad or an analytics upload can finish (the game itself does not run in the background); <strong>reading basic phone state</strong> (added by the Google Mobile Ads SDK); and <strong>checking where the game was installed from</strong>, for example the Play Store (the install-referrer permission, used by Firebase Analytics).</li>
   </ul>
 </section>
 
 <section class="card" id="nothing">
-  <h2>6. What we do not collect</h2>
-  <p>The game does not ask for, access or collect: your name, email address, phone number, contacts, photos, files, microphone, camera, precise location or SMS messages. The game contains no social features, chat or user-generated content, and no third-party analytics or crash-reporting service at the time of writing. If we add one, we will update this policy first.</p>
+  <h2>7. What we do not collect</h2>
+  <p>The game does not ask for, access or collect: your name, email address, phone number, contacts, photos, files, microphone, camera, precise location or SMS messages. The game contains no social features, chat or user-generated content. The only analytics and crash-reporting service it uses is Google Firebase, described in section 4. If we add another service, we will update this policy first.</p>
   <p>We do not sell your personal information and we do not use it to make decisions that have legal or similarly significant effects on you.</p>
 </section>
 
 <section class="card" id="children">
-  <h2>7. Children</h2>
+  <h2>8. Children</h2>
   <p>Crash Drop is a general-audience game and is <strong>not directed to children under 13</strong> (or under the minimum age of digital consent in your country). We do not knowingly collect personal information from children. If you are a parent or guardian and believe a child has provided information, or you want ads personalisation turned off, please contact us and see the choices in section 3.</p>
 </section>
 
 <section class="card" id="retention">
-  <h2>8. Keeping and deleting data</h2>
+  <h2>9. Keeping and deleting data</h2>
   <ul>
     <li><strong>Data on your device</strong> stays until you delete it. You can erase it at any time with <em>Android Settings &rarr; Apps &rarr; Crash Drop &rarr; Storage &rarr; Clear data</em>, or by uninstalling the game. Doing so resets your progress; purchases can be restored from Google Play.</li>
     <li><strong>Ad-related data</strong> is kept by Google according to its own retention policies; see the links in section 3.</li>
-    <li>Because there are no accounts and we hold no copy of your data, we have nothing on our servers to delete. If you think we hold information about you, write to us and we will respond.</li>
+    <li><strong>Analytics and crash data</strong> is kept by Google Firebase for a limited period set in our Firebase settings, and is not linked to your identity. You can stop it being sent at any time in Settings (section 4).</li>
+    <li>We do not run our own servers. The analytics and crash data in section 4 is stored by Google in our Firebase project under a random ID, so we cannot tell whose it is and cannot look it up by name. You can stop it being sent with the Settings switch, and reinstalling the game gives it a new random ID. If you think we hold information about you, write to us and we will respond.</li>
   </ul>
 </section>
 
 <section class="card" id="rights">
-  <h2>9. Your rights and choices</h2>
-  <p>Depending on where you live (for example the EEA, the United Kingdom, India, or certain US states such as California) you may have the right to access, correct, delete or port your personal data, to object to or restrict its processing, to withdraw consent, and to complain to your data-protection authority. Since we do not hold identifiable personal data about you, most requests are answered by the choices in sections 3 and 8; for anything else contact us at <a href="mailto:itsharshkantgupta@gmail.com">itsharshkantgupta@gmail.com</a> and we will reply as soon as we can.</p>
-  <p>Where we rely on consent (for personalised ads), you can withdraw it at any time as described in section 3.</p>
+  <h2>10. Your rights and choices</h2>
+  <p>Depending on where you live (for example the EEA, the United Kingdom, India, or certain US states such as California) you may have the right to access, correct, delete or port your personal data, to object to or restrict its processing, to withdraw consent, and to complain to your data-protection authority. Since we do not hold identifiable personal data about you, most requests are answered by the choices in sections 3, 4 and 9; for anything else contact us at <a href="mailto:itsharshkantgupta@gmail.com">itsharshkantgupta@gmail.com</a> and we will reply as soon as we can.</p>
+  <p>Where we rely on consent (for personalised ads, analytics and crash reports), you can withdraw it at any time as described in sections 3 and 4.</p>
 </section>
 
 <section class="card" id="security">
-  <h2>10. Security and international transfers</h2>
-  <p>Game data is kept in the app's private storage on your device, protected by Android. Network traffic between the ads and billing services and your device is handled by Google using industry-standard encryption. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
-  <p>Google may process ad-related data in countries other than your own, including the United States, under its own safeguards. We do not transfer personal data ourselves.</p>
+  <h2>11. Security and international transfers</h2>
+  <p>Game data is kept in the app's private storage on your device, protected by Android. Network traffic between the ads, billing, analytics and crash-reporting services and your device is handled by Google using industry-standard encryption. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
+  <p>Google may process ad-related, analytics and crash data in countries other than your own, including the United States, under its own safeguards. We do not transfer personal data ourselves.</p>
 </section>
 
 <section class="card" id="changes">
-  <h2>11. Changes to this policy</h2>
+  <h2>12. Changes to this policy</h2>
   <p>We may update this policy, for example when we add features or services. The &ldquo;Last updated&rdquo; date at the top shows when it last changed. Material changes will also be reflected in the game or its store listing. Continued use after a change means you accept the updated policy.</p>
 </section>
 
 <section class="card" id="contact">
-  <h2>12. Contact</h2>
+  <h2>13. Contact</h2>
   <p><strong>Qissora</strong><br>
   Email: <a href="mailto:itsharshkantgupta@gmail.com">itsharshkantgupta@gmail.com</a></p>
   <p>Questions, requests or complaints about privacy are welcome at the address above.</p>
